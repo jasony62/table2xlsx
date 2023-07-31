@@ -1,0 +1,30 @@
+{
+  "name": "table2xlsx",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc && vite build && vite --config vite-content.config.ts build --emptyOutDir false && vite --config vite-background.config.ts build --emptyOutDir false",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@medv/finder": "^3.1.0",
+    "pinia": "^2.1.4",
+    "vue": "^3.3.4",
+    "vue-router": "^4.2.4",
+    "xlsx": "https://cdn.sheetjs.com/xlsx-0.20.0/xlsx-0.20.0.tgz"
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.0.241",
+    "@types/node": "^20.4.2",
+    "@vitejs/plugin-vue": "^4.2.3",
+    "autoprefixer": "^10.4.14",
+    "postcss": "^8.4.26",
+    "sass": "^1.63.6",
+    "tailwindcss": "^3.3.3",
+    "typescript": "^5.0.2",
+    "vite": "^4.4.0",
+    "vue-tsc": "^1.8.3"
+  }
+}

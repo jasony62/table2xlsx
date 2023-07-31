@@ -1,0 +1,24 @@
+{
+  "name": "Table2XLSX",
+  "version": "0.0.1",
+  "description": "将页面中的表格导出为XLSX文件",
+  "manifest_version": 3,
+  "author": "Jasony62",
+  "permissions": [
+    "tabs",
+    "contextMenus",
+    "scripting",
+    "webRequest",
+    "storage",
+    "notifications",
+    "downloads"
+  ],
+  "host_permissions": ["http://*/*", "https://*/*"],
+  "background": {
+    "service_worker": "backgroundScript.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Table2XLSX"
+  }
+}
