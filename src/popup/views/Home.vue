@@ -79,22 +79,27 @@
 <style lang="scss">
 .tables>div:nth-child(1) {
   outline: 2px dotted red;
+  background-color: rgba(255, 0, 0, 0.2);
 }
 
 .tables>div:nth-child(2) {
   outline: 2px dotted green;
+  background-color: rgba(0, 255, 0, 0.2);
 }
 
 .tables>div:nth-child(3) {
   outline: 2px dotted blue;
+  background-color: rgba(0, 0, 255, 0.2);
 }
 
 .tables>div:nth-child(4) {
   outline: 2px dotted brown;
+  background-color: rgba(150, 75, 0, 0.2);
 }
 
 .tables>div:nth-child(5) {
-  outline: 2px dotted yellow;
+  outline: 2px dotted orange;
+  background-color: rgba(255, 104, 31, 0.2);
 }
 
 #preview {
@@ -114,15 +119,11 @@
 </style>
 <script setup lang="ts">
 import { computed, onMounted, ref } from 'vue'
-import {
-  build,
-  BrowserApi,
-  QueryTablesResult,
-  TableProfile,
-} from '@/popup/browser'
+import { build, BrowserApi } from '@/popup/browser'
 import * as XLSX from 'xlsx'
 import { storeToRefs } from 'pinia'
 import useStore from '../store'
+import type { TableProfile, QueryTablesResult } from '@/types'
 
 const tables = ref<TableProfile[]>([])
 const selectedTable = ref('')

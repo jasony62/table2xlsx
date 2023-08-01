@@ -1,13 +1,6 @@
 import * as XLSX from 'xlsx'
 import useStore from '../store'
-
-export type TableProfile = {
-  selector: string
-}
-
-export type QueryTablesResult = {
-  tables: TableProfile[]
-}
+import type { QueryTablesResult } from '@/types'
 
 function s2ab(s: string) {
   let buf = new ArrayBuffer(s.length)
@@ -210,7 +203,7 @@ async function build(): Promise<BrowserApi | null> {
       /**
        * 给页面中表格设置样式
        */
-      const Collors = ['red', 'green', 'blue', 'brown', 'yellow']
+      const Collors = ['red', 'green', 'blue', 'brown', 'orange']
       const css = Collors.reduce((p, color, i) => {
         return `${p} table.table2xlsx.table2xlsx-${i} { outline: 4px dotted ${color}; }`
       }, '')

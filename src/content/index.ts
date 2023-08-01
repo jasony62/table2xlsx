@@ -1,5 +1,6 @@
 import { finder } from '@medv/finder'
 import initElementSelector from './main'
+import type { TableProfile } from '@/types'
 
 function elementSelectorInstance() {
   const rootElementExist: HTMLElement | null = document.querySelector(
@@ -25,14 +26,15 @@ function elementSelectorInstance() {
    * 查找并标记所有的table对象
    * @returns
    */
-  function queryAndMarkTables() {
+  function queryAndMarkTables(): TableProfile[] | null {
     let tables = document.querySelectorAll('table')
     if (tables.length) {
-      let profiles = []
+      let profiles: TableProfile[] = []
       for (let i = 0; i < tables.length; i++) {
         let table = tables[i]
-        table.classList.add(`table2xlsx`, `table2xlsx-${i}`)
+        // 先获得原始的selector，后加扩展的class
         let selector = finder(table)
+        table.classList.add(`table2xlsx`, `table2xlsx-${i}`)
         profiles.push({ selector })
       }
       return profiles
