@@ -6,10 +6,11 @@
         <div class="hidden">
           <button @click="queryTables">获得当前页面的表格</button>
         </div>
+        <div>页面中的表格：</div>
         <div class="tables flex flex-col gap-2">
           <div v-for="t in tables" @click="selectTable(t)">{{ t.selector }}</div>
         </div>
-        <div>选中的表格：{{ selectedTable }}</div>
+        <div>选中的表格（单击选择）：{{ selectedTable }}</div>
       </div>
       <div class="p-2">
         <div>
